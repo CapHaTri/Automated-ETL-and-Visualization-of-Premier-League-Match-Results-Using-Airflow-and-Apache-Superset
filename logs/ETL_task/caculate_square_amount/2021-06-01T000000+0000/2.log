@@ -1,0 +1,23 @@
+[2024-07-21 03:51:16,178] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: ETL_task.caculate_square_amount 2021-06-01T00:00:00+00:00 [queued]>
+[2024-07-21 03:51:16,197] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: ETL_task.caculate_square_amount 2021-06-01T00:00:00+00:00 [queued]>
+[2024-07-21 03:51:16,197] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-21 03:51:16,198] {taskinstance.py:1088} INFO - Starting attempt 2 of 2
+[2024-07-21 03:51:16,198] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-21 03:51:16,209] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): caculate_square_amount> on 2021-06-01T00:00:00+00:00
+[2024-07-21 03:51:16,216] {standard_task_runner.py:52} INFO - Started process 1230 to run task
+[2024-07-21 03:51:16,220] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'ETL_task', 'caculate_square_amount', '2021-06-01T00:00:00+00:00', '--job-id', '212', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/ELT.py', '--cfg-path', '/tmp/tmporhzuib7', '--error-file', '/tmp/tmpt8j601ey']
+[2024-07-21 03:51:16,221] {standard_task_runner.py:77} INFO - Job 212: Subtask caculate_square_amount
+[2024-07-21 03:51:16,270] {logging_mixin.py:104} INFO - Running <TaskInstance: ETL_task.caculate_square_amount 2021-06-01T00:00:00+00:00 [running]> on host abd747f4a187
+[2024-07-21 03:51:16,318] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=trihx2003@gmail.com
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=ETL_task
+AIRFLOW_CTX_TASK_ID=caculate_square_amount
+AIRFLOW_CTX_EXECUTION_DATE=2021-06-01T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-06-01T00:00:00+00:00
+[2024-07-21 03:51:16,358] {python.py:151} INFO - Done. Returned value was: True
+[2024-07-21 03:51:16,384] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=ETL_task, task_id=caculate_square_amount, execution_date=20210601T000000, start_date=20240721T035116, end_date=20240721T035116
+[2024-07-21 03:51:16,417] {taskinstance.py:1265} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-07-21 03:51:16,472] {local_task_job.py:149} INFO - Task exited with return code 0

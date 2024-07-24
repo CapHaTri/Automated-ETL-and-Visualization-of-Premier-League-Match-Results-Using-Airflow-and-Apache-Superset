@@ -1,0 +1,367 @@
+[2024-07-21 04:44:18,275] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: ETL_task.load_to_postgres 2024-07-21T04:44:13.800760+00:00 [queued]>
+[2024-07-21 04:44:18,293] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: ETL_task.load_to_postgres 2024-07-21T04:44:13.800760+00:00 [queued]>
+[2024-07-21 04:44:18,294] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-21 04:44:18,294] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-07-21 04:44:18,295] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-21 04:44:18,305] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): load_to_postgres> on 2024-07-21T04:44:13.800760+00:00
+[2024-07-21 04:44:18,314] {standard_task_runner.py:52} INFO - Started process 945 to run task
+[2024-07-21 04:44:18,317] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'ETL_task', 'load_to_postgres', '2024-07-21T04:44:13.800760+00:00', '--job-id', '263', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/ETL.py', '--cfg-path', '/tmp/tmphp3m7_ly', '--error-file', '/tmp/tmp3v1nmlxw']
+[2024-07-21 04:44:18,318] {standard_task_runner.py:77} INFO - Job 263: Subtask load_to_postgres
+[2024-07-21 04:44:18,354] {logging_mixin.py:104} INFO - Running <TaskInstance: ETL_task.load_to_postgres 2024-07-21T04:44:13.800760+00:00 [running]> on host b19ee44dc7cc
+[2024-07-21 04:44:18,397] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=trihx2003@gmail.com
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=ETL_task
+AIRFLOW_CTX_TASK_ID=load_to_postgres
+AIRFLOW_CTX_EXECUTION_DATE=2024-07-21T04:44:13.800760+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-07-21T04:44:13.800760+00:00
+[2024-07-21 04:44:18,417] {logging_mixin.py:104} INFO - Các cột trong file CSV: Index(['id', 'first_name', 'last_name', 'email', 'hire_date', 'days_worked'], dtype='object')
+[2024-07-21 04:44:18,438] {logging_mixin.py:104} INFO - Chèn hàng: id                                1
+first_name                     John
+last_name                       Doe
+email          john.doe@example.com
+hire_date                2024-01-15
+days_worked                     188
+Name: 0, dtype: object
+[2024-07-21 04:44:18,444] {logging_mixin.py:104} INFO - Chèn hàng: id                                  2
+first_name                       Jane
+last_name                       Smith
+email          jane.smith@example.com
+hire_date                  2024-02-20
+days_worked                       152
+Name: 1, dtype: object
+[2024-07-21 04:44:18,445] {logging_mixin.py:104} INFO - Chèn hàng: id                                     3
+first_name                         Alice
+last_name                        Johnson
+email          alice.johnson@example.com
+hire_date                     2024-03-10
+days_worked                          133
+Name: 2, dtype: object
+[2024-07-21 04:44:18,446] {logging_mixin.py:104} INFO - Chèn hàng: id                                    4
+first_name                       Robert
+last_name                         Brown
+email          robert.brown@example.com
+hire_date                    2024-04-05
+days_worked                         107
+Name: 3, dtype: object
+[2024-07-21 04:44:18,448] {logging_mixin.py:104} INFO - Chèn hàng: id                                   5
+first_name                       Emily
+last_name                        Davis
+email          emily.davis@example.com
+hire_date                   2024-05-14
+days_worked                         68
+Name: 4, dtype: object
+[2024-07-21 04:44:18,449] {logging_mixin.py:104} INFO - Chèn hàng: id                                      6
+first_name                        Michael
+last_name                          Miller
+email          michael.miller@example.com
+hire_date                      2024-06-23
+days_worked                            28
+Name: 5, dtype: object
+[2024-07-21 04:44:18,450] {logging_mixin.py:104} INFO - Chèn hàng: id                                    7
+first_name                        Sarah
+last_name                        Wilson
+email          sarah.wilson@example.com
+hire_date                    2024-07-02
+days_worked                          19
+Name: 6, dtype: object
+[2024-07-21 04:44:18,451] {logging_mixin.py:104} INFO - Chèn hàng: id                                   8
+first_name                       David
+last_name                        Moore
+email          david.moore@example.com
+hire_date                   2024-08-11
+days_worked                        -21
+Name: 7, dtype: object
+[2024-07-21 04:44:18,452] {logging_mixin.py:104} INFO - Chèn hàng: id                                    9
+first_name                        Laura
+last_name                        Taylor
+email          laura.taylor@example.com
+hire_date                    2024-09-20
+days_worked                         -61
+Name: 8, dtype: object
+[2024-07-21 04:44:18,453] {logging_mixin.py:104} INFO - Chèn hàng: id                                      10
+first_name                          Daniel
+last_name                         Anderson
+email          daniel.anderson@example.com
+hire_date                       2024-10-29
+days_worked                           -100
+Name: 9, dtype: object
+[2024-07-21 04:44:18,454] {logging_mixin.py:104} INFO - Chèn hàng: id                                  11
+first_name                        Anna
+last_name                       Thomas
+email          anna.thomas@example.com
+hire_date                   2024-11-08
+days_worked                       -110
+Name: 10, dtype: object
+[2024-07-21 04:44:18,455] {logging_mixin.py:104} INFO - Chèn hàng: id                                    12
+first_name                         James
+last_name                        Jackson
+email          james.jackson@example.com
+hire_date                     2024-12-17
+days_worked                         -149
+Name: 11, dtype: object
+[2024-07-21 04:44:18,457] {logging_mixin.py:104} INFO - Chèn hàng: id                                     13
+first_name                       Patricia
+last_name                           White
+email          patricia.white@example.com
+hire_date                      2024-01-26
+days_worked                           177
+Name: 12, dtype: object
+[2024-07-21 04:44:18,458] {logging_mixin.py:104} INFO - Chèn hàng: id                                         14
+first_name                        Christopher
+last_name                              Harris
+email          christopher.harris@example.com
+hire_date                          2024-02-15
+days_worked                               157
+Name: 13, dtype: object
+[2024-07-21 04:44:18,459] {logging_mixin.py:104} INFO - Chèn hàng: id                                     15
+first_name                        Jessica
+last_name                          Martin
+email          jessica.martin@example.com
+hire_date                      2024-03-25
+days_worked                           118
+Name: 14, dtype: object
+[2024-07-21 04:44:18,460] {logging_mixin.py:104} INFO - Chèn hàng: id                                    16
+first_name                          Paul
+last_name                       Thompson
+email          paul.thompson@example.com
+hire_date                     2024-04-14
+days_worked                           98
+Name: 15, dtype: object
+[2024-07-21 04:44:18,461] {logging_mixin.py:104} INFO - Chèn hàng: id                                       17
+first_name                        Elizabeth
+last_name                            Garcia
+email          elizabeth.garcia@example.com
+hire_date                        2024-05-23
+days_worked                              59
+Name: 16, dtype: object
+[2024-07-21 04:44:18,462] {logging_mixin.py:104} INFO - Chèn hàng: id                                    18
+first_name                          Mark
+last_name                       Martinez
+email          mark.martinez@example.com
+hire_date                     2024-06-12
+days_worked                           39
+Name: 17, dtype: object
+[2024-07-21 04:44:18,463] {logging_mixin.py:104} INFO - Chèn hàng: id                                     19
+first_name                          Linda
+last_name                        Robinson
+email          linda.robinson@example.com
+hire_date                      2024-07-01
+days_worked                            20
+Name: 18, dtype: object
+[2024-07-21 04:44:18,464] {logging_mixin.py:104} INFO - Chèn hàng: id                                   20
+first_name                       Steven
+last_name                         Clark
+email          steven.clark@example.com
+hire_date                    2024-08-10
+days_worked                         -20
+Name: 19, dtype: object
+[2024-07-21 04:44:18,466] {logging_mixin.py:104} INFO - Chèn hàng: id                                        21
+first_name                           Barbara
+last_name                          Rodriguez
+email          barbara.rodriguez@example.com
+hire_date                         2024-09-19
+days_worked                              -60
+Name: 20, dtype: object
+[2024-07-21 04:44:18,467] {logging_mixin.py:104} INFO - Chèn hàng: id                                  22
+first_name                       Kevin
+last_name                        Lewis
+email          kevin.lewis@example.com
+hire_date                   2024-10-28
+days_worked                        -99
+Name: 21, dtype: object
+[2024-07-21 04:44:18,468] {logging_mixin.py:104} INFO - Chèn hàng: id                                23
+first_name                     Susan
+last_name                        Lee
+email          susan.lee@example.com
+hire_date                 2024-11-07
+days_worked                     -109
+Name: 22, dtype: object
+[2024-07-21 04:44:18,469] {logging_mixin.py:104} INFO - Chèn hàng: id                                     24
+first_name                        Charles
+last_name                          Walker
+email          charles.walker@example.com
+hire_date                      2024-12-16
+days_worked                          -148
+Name: 23, dtype: object
+[2024-07-21 04:44:18,470] {logging_mixin.py:104} INFO - Chèn hàng: id                                25
+first_name                      Mary
+last_name                       Hall
+email          mary.hall@example.com
+hire_date                 2024-01-25
+days_worked                      178
+Name: 24, dtype: object
+[2024-07-21 04:44:18,471] {logging_mixin.py:104} INFO - Chèn hàng: id                                   26
+first_name                       Thomas
+last_name                         Allen
+email          thomas.allen@example.com
+hire_date                    2024-02-14
+days_worked                         158
+Name: 25, dtype: object
+[2024-07-21 04:44:18,472] {logging_mixin.py:104} INFO - Chèn hàng: id                                  27
+first_name                       Karen
+last_name                        Young
+email          karen.young@example.com
+hire_date                   2024-03-24
+days_worked                        119
+Name: 26, dtype: object
+[2024-07-21 04:44:18,473] {logging_mixin.py:104} INFO - Chèn hàng: id                                        28
+first_name                           Matthew
+last_name                          Hernandez
+email          matthew.hernandez@example.com
+hire_date                         2024-04-13
+days_worked                               99
+Name: 27, dtype: object
+[2024-07-21 04:44:18,474] {logging_mixin.py:104} INFO - Chèn hàng: id                                 29
+first_name                      Betty
+last_name                        King
+email          betty.king@example.com
+hire_date                  2024-05-22
+days_worked                        60
+Name: 28, dtype: object
+[2024-07-21 04:44:18,475] {logging_mixin.py:104} INFO - Chèn hàng: id                                     30
+first_name                        Anthony
+last_name                          Wright
+email          anthony.wright@example.com
+hire_date                      2024-06-11
+days_worked                            40
+Name: 29, dtype: object
+[2024-07-21 04:44:18,477] {logging_mixin.py:104} INFO - Chèn hàng: id                                    31
+first_name                       Dorothy
+last_name                          Lopez
+email          dorothy.lopez@example.com
+hire_date                     2024-07-31
+days_worked                          -10
+Name: 30, dtype: object
+[2024-07-21 04:44:18,478] {logging_mixin.py:104} INFO - Chèn hàng: id                                 32
+first_name                      Brian
+last_name                        Hill
+email          brian.hill@example.com
+hire_date                  2024-08-09
+days_worked                       -19
+Name: 31, dtype: object
+[2024-07-21 04:44:18,479] {logging_mixin.py:104} INFO - Chèn hàng: id                                 33
+first_name                       Lisa
+last_name                       Scott
+email          lisa.scott@example.com
+hire_date                  2024-09-18
+days_worked                       -59
+Name: 32, dtype: object
+[2024-07-21 04:44:18,480] {logging_mixin.py:104} INFO - Chèn hàng: id                                   34
+first_name                       Joshua
+last_name                         Green
+email          joshua.green@example.com
+hire_date                    2024-10-27
+days_worked                         -98
+Name: 33, dtype: object
+[2024-07-21 04:44:18,481] {logging_mixin.py:104} INFO - Chèn hàng: id                                     35
+first_name                       Margaret
+last_name                           Adams
+email          margaret.adams@example.com
+hire_date                      2024-11-06
+days_worked                          -108
+Name: 34, dtype: object
+[2024-07-21 04:44:18,482] {logging_mixin.py:104} INFO - Chèn hàng: id                                   36
+first_name                       Edward
+last_name                         Baker
+email          edward.baker@example.com
+hire_date                    2024-12-15
+days_worked                        -147
+Name: 35, dtype: object
+[2024-07-21 04:44:18,484] {logging_mixin.py:104} INFO - Chèn hàng: id                                     37
+first_name                          Nancy
+last_name                        Gonzalez
+email          nancy.gonzalez@example.com
+hire_date                      2025-01-24
+days_worked                          -187
+Name: 36, dtype: object
+[2024-07-21 04:44:18,485] {logging_mixin.py:104} INFO - Chèn hàng: id                                     38
+first_name                        Richard
+last_name                          Nelson
+email          richard.nelson@example.com
+hire_date                      2025-02-13
+days_worked                          -207
+Name: 37, dtype: object
+[2024-07-21 04:44:18,486] {logging_mixin.py:104} INFO - Chèn hàng: id                                   39
+first_name                        Karen
+last_name                        Carter
+email          karen.carter@example.com
+hire_date                    2025-03-23
+days_worked                        -245
+Name: 38, dtype: object
+[2024-07-21 04:44:18,487] {logging_mixin.py:104} INFO - Chèn hàng: id                                      40
+first_name                          George
+last_name                         Mitchell
+email          george.mitchell@example.com
+hire_date                       2025-04-12
+days_worked                           -265
+Name: 39, dtype: object
+[2024-07-21 04:44:18,488] {logging_mixin.py:104} INFO - Chèn hàng: id                                  41
+first_name                       Donna
+last_name                        Perez
+email          donna.perez@example.com
+hire_date                   2025-05-21
+days_worked                       -304
+Name: 40, dtype: object
+[2024-07-21 04:44:18,490] {logging_mixin.py:104} INFO - Chèn hàng: id                                    42
+first_name                         Jason
+last_name                        Roberts
+email          jason.roberts@example.com
+hire_date                     2025-06-10
+days_worked                         -324
+Name: 41, dtype: object
+[2024-07-21 04:44:18,491] {logging_mixin.py:104} INFO - Chèn hàng: id                                   43
+first_name                        Betty
+last_name                        Turner
+email          betty.turner@example.com
+hire_date                    2025-07-30
+days_worked                        -374
+Name: 42, dtype: object
+[2024-07-21 04:44:18,492] {logging_mixin.py:104} INFO - Chèn hàng: id                                     44
+first_name                          Scott
+last_name                        Phillips
+email          scott.phillips@example.com
+hire_date                      2025-08-08
+days_worked                          -383
+Name: 43, dtype: object
+[2024-07-21 04:44:18,493] {logging_mixin.py:104} INFO - Chèn hàng: id                                       45
+first_name                          Deborah
+last_name                          Campbell
+email          deborah.campbell@example.com
+hire_date                        2025-09-17
+days_worked                            -423
+Name: 44, dtype: object
+[2024-07-21 04:44:18,495] {logging_mixin.py:104} INFO - Chèn hàng: id                                  46
+first_name                        Eric
+last_name                       Parker
+email          eric.parker@example.com
+hire_date                   2025-10-26
+days_worked                       -462
+Name: 45, dtype: object
+[2024-07-21 04:44:18,496] {logging_mixin.py:104} INFO - Chèn hàng: id                                  47
+first_name                       Helen
+last_name                        Evans
+email          helen.evans@example.com
+hire_date                   2025-11-05
+days_worked                       -472
+Name: 46, dtype: object
+[2024-07-21 04:44:18,497] {logging_mixin.py:104} INFO - Chèn hàng: id                                      48
+first_name                         Stephen
+last_name                          Edwards
+email          stephen.edwards@example.com
+hire_date                       2025-12-14
+days_worked                           -511
+Name: 47, dtype: object
+[2024-07-21 04:44:18,498] {logging_mixin.py:104} INFO - Chèn hàng: id                                     49
+first_name                         Sandra
+last_name                         Collins
+email          sandra.collins@example.com
+hire_date                      2025-01-23
+days_worked                          -186
+Name: 48, dtype: object
+[2024-07-21 04:44:18,501] {python.py:151} INFO - Done. Returned value was: True
+[2024-07-21 04:44:18,525] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=ETL_task, task_id=load_to_postgres, execution_date=20240721T044413, start_date=20240721T044418, end_date=20240721T044418
+[2024-07-21 04:44:18,547] {taskinstance.py:1265} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-07-21 04:44:18,569] {local_task_job.py:149} INFO - Task exited with return code 0

@@ -1,0 +1,23 @@
+[2024-07-21 03:42:03,085] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: ETL_task.load_from_mysql 2021-08-05T00:00:00+00:00 [queued]>
+[2024-07-21 03:42:03,120] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: ETL_task.load_from_mysql 2021-08-05T00:00:00+00:00 [queued]>
+[2024-07-21 03:42:03,121] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-21 03:42:03,121] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-07-21 03:42:03,122] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-21 03:42:03,141] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): load_from_mysql> on 2021-08-05T00:00:00+00:00
+[2024-07-21 03:42:03,147] {standard_task_runner.py:52} INFO - Started process 235 to run task
+[2024-07-21 03:42:03,157] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'ETL_task', 'load_from_mysql', '2021-08-05T00:00:00+00:00', '--job-id', '173', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/ELT.py', '--cfg-path', '/tmp/tmpvdy3y_al', '--error-file', '/tmp/tmpneoupt52']
+[2024-07-21 03:42:03,158] {standard_task_runner.py:77} INFO - Job 173: Subtask load_from_mysql
+[2024-07-21 03:42:03,264] {logging_mixin.py:104} INFO - Running <TaskInstance: ETL_task.load_from_mysql 2021-08-05T00:00:00+00:00 [running]> on host abd747f4a187
+[2024-07-21 03:42:03,380] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=trihx2003@gmail.com
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=ETL_task
+AIRFLOW_CTX_TASK_ID=load_from_mysql
+AIRFLOW_CTX_EXECUTION_DATE=2021-08-05T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-08-05T00:00:00+00:00
+[2024-07-21 03:42:03,425] {python.py:151} INFO - Done. Returned value was: True
+[2024-07-21 03:42:03,525] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=ETL_task, task_id=load_from_mysql, execution_date=20210805T000000, start_date=20240721T034203, end_date=20240721T034203
+[2024-07-21 03:42:03,673] {taskinstance.py:1265} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-07-21 03:42:03,695] {local_task_job.py:149} INFO - Task exited with return code 0

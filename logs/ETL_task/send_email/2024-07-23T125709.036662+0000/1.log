@@ -1,0 +1,2 @@
+[2024-07-23 12:57:14,484] {taskinstance.py:890} INFO - Dependencies not met for <TaskInstance: ETL_task.send_email 2024-07-23T12:57:09.036662+00:00 [queued]>, dependency 'Trigger Rule' FAILED: Task's trigger rule 'all_success' requires all upstream tasks to have succeeded, but found 1 non-success(es). upstream_tasks_state={'total': 1, 'successes': 0, 'skipped': 0, 'failed': 0, 'upstream_failed': 0, 'done': 0}, upstream_task_ids={'load_to_postgres'}
+[2024-07-23 12:57:14,488] {local_task_job.py:96} INFO - Task is not able to be run

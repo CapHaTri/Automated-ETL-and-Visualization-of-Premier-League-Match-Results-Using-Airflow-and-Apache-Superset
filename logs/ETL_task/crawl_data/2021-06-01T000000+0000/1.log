@@ -1,0 +1,132 @@
+[2024-07-23 13:19:17,797] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: ETL_task.crawl_data 2021-06-01T00:00:00+00:00 [queued]>
+[2024-07-23 13:19:17,824] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: ETL_task.crawl_data 2021-06-01T00:00:00+00:00 [queued]>
+[2024-07-23 13:19:17,824] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-23 13:19:17,825] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-07-23 13:19:17,825] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-23 13:19:17,843] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): crawl_data> on 2021-06-01T00:00:00+00:00
+[2024-07-23 13:19:17,860] {standard_task_runner.py:52} INFO - Started process 176 to run task
+[2024-07-23 13:19:17,868] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'ETL_task', 'crawl_data', '2021-06-01T00:00:00+00:00', '--job-id', '301', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/ETL.py', '--cfg-path', '/tmp/tmpsfbejuy0', '--error-file', '/tmp/tmp6wjiin00']
+[2024-07-23 13:19:17,874] {standard_task_runner.py:77} INFO - Job 301: Subtask crawl_data
+[2024-07-23 13:19:17,964] {logging_mixin.py:104} INFO - Running <TaskInstance: ETL_task.crawl_data 2021-06-01T00:00:00+00:00 [running]> on host 72ef14de1b97
+[2024-07-23 13:19:18,059] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=trihx2003@gmail.com
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=ETL_task
+AIRFLOW_CTX_TASK_ID=crawl_data
+AIRFLOW_CTX_EXECUTION_DATE=2021-06-01T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-06-01T00:00:00+00:00
+[2024-07-23 13:19:18,830] {taskinstance.py:1501} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1157, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1331, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1361, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 150, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 161, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/ETL.py", line 18, in crawl_and_store
+    standings_table = soup.select('table.stats_table')[0]
+IndexError: list index out of range
+[2024-07-23 13:19:18,838] {taskinstance.py:1551} INFO - Marking task as UP_FOR_RETRY. dag_id=ETL_task, task_id=crawl_data, execution_date=20210601T000000, start_date=20240723T131917, end_date=20240723T131918
+[2024-07-23 13:19:18,867] {logging_mixin.py:104} WARNING - /home/***/.local/lib/python3.6/site-packages/***/utils/email.py:102 PendingDeprecationWarning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+[2024-07-23 13:19:18,868] {configuration.py:365} WARNING - section/key [smtp/smtp_user] not found in config
+[2024-07-23 13:19:18,868] {email.py:208} INFO - Email alerting: attempt 1
+[2024-07-23 13:19:18,875] {configuration.py:365} WARNING - section/key [smtp/smtp_user] not found in config
+[2024-07-23 13:19:18,876] {email.py:208} INFO - Email alerting: attempt 1
+[2024-07-23 13:19:18,876] {taskinstance.py:1557} ERROR - Failed to send email to: ['trihx2003@gmail.com']
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1157, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1331, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1361, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 150, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 161, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/ETL.py", line 18, in crawl_and_store
+    standings_table = soup.select('table.stats_table')[0]
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1896, in email_alert
+    send_email(self.task.email, subject, html_content)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/utils/email.py", line 66, in send_email
+    **kwargs,
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/utils/email.py", line 102, in send_email_smtp
+    send_mime_email(e_from=smtp_mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/utils/email.py", line 210, in send_mime_email
+    conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/utils/email.py", line 244, in _get_smtp_connection
+    else smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.6/smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.6/smtplib.py", line 336, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.6/smtplib.py", line 307, in _get_socket
+    self.source_address)
+  File "/usr/local/lib/python3.6/socket.py", line 724, in create_connection
+    raise err
+  File "/usr/local/lib/python3.6/socket.py", line 713, in create_connection
+    sock.connect(sa)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1555, in handle_failure
+    self.email_alert(error)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1898, in email_alert
+    send_email(self.task.email, subject, html_content_err)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/utils/email.py", line 66, in send_email
+    **kwargs,
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/utils/email.py", line 102, in send_email_smtp
+    send_mime_email(e_from=smtp_mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/utils/email.py", line 210, in send_mime_email
+    conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/utils/email.py", line 244, in _get_smtp_connection
+    else smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.6/smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.6/smtplib.py", line 336, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.6/smtplib.py", line 307, in _get_socket
+    self.source_address)
+  File "/usr/local/lib/python3.6/socket.py", line 724, in create_connection
+    raise err
+  File "/usr/local/lib/python3.6/socket.py", line 713, in create_connection
+    sock.connect(sa)
+OSError: [Errno 99] Cannot assign requested address
+[2024-07-23 13:19:18,929] {local_task_job.py:149} INFO - Task exited with return code 1
+[2024-07-23 15:30:18,319] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: ETL_task.crawl_data 2021-06-01T00:00:00+00:00 [queued]>
+[2024-07-23 15:30:18,334] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: ETL_task.crawl_data 2021-06-01T00:00:00+00:00 [queued]>
+[2024-07-23 15:30:18,334] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-23 15:30:18,334] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-07-23 15:30:18,335] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-23 15:30:18,342] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): crawl_data> on 2021-06-01T00:00:00+00:00
+[2024-07-23 15:30:18,348] {standard_task_runner.py:52} INFO - Started process 3687 to run task
+[2024-07-23 15:30:18,352] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'ETL_task', 'crawl_data', '2021-06-01T00:00:00+00:00', '--job-id', '337', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/ETL.py', '--cfg-path', '/tmp/tmplct80d8g', '--error-file', '/tmp/tmpcx2xwmue']
+[2024-07-23 15:30:18,355] {standard_task_runner.py:77} INFO - Job 337: Subtask crawl_data
+[2024-07-23 15:30:18,401] {logging_mixin.py:104} INFO - Running <TaskInstance: ETL_task.crawl_data 2021-06-01T00:00:00+00:00 [running]> on host 1026daea27fc
+[2024-07-23 15:30:18,448] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=trihx2003@gmail.com
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=ETL_task
+AIRFLOW_CTX_TASK_ID=crawl_data
+AIRFLOW_CTX_EXECUTION_DATE=2021-06-01T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-06-01T00:00:00+00:00
+[2024-07-23 15:30:18,727] {logging_mixin.py:104} INFO - Request failed with status code 429
+[2024-07-23 15:30:18,728] {python.py:151} INFO - Done. Returned value was: None
+[2024-07-23 15:30:18,741] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=ETL_task, task_id=crawl_data, execution_date=20210601T000000, start_date=20240723T153018, end_date=20240723T153018
+[2024-07-23 15:30:18,769] {taskinstance.py:1265} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-07-23 15:30:18,809] {local_task_job.py:149} INFO - Task exited with return code 0

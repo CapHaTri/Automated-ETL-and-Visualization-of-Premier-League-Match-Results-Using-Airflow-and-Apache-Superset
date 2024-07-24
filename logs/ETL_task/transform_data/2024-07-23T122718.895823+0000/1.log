@@ -1,0 +1,24 @@
+[2024-07-23 12:29:24,901] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: ETL_task.transform_data 2024-07-23T12:27:18.895823+00:00 [queued]>
+[2024-07-23 12:29:24,914] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: ETL_task.transform_data 2024-07-23T12:27:18.895823+00:00 [queued]>
+[2024-07-23 12:29:24,915] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-23 12:29:24,916] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-07-23 12:29:24,916] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-23 12:29:24,928] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): transform_data> on 2024-07-23T12:27:18.895823+00:00
+[2024-07-23 12:29:24,933] {standard_task_runner.py:52} INFO - Started process 2157 to run task
+[2024-07-23 12:29:24,938] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'ETL_task', 'transform_data', '2024-07-23T12:27:18.895823+00:00', '--job-id', '282', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/ETL.py', '--cfg-path', '/tmp/tmpmdob_9qy', '--error-file', '/tmp/tmpe1ji_4r5']
+[2024-07-23 12:29:24,941] {standard_task_runner.py:77} INFO - Job 282: Subtask transform_data
+[2024-07-23 12:29:24,976] {logging_mixin.py:104} INFO - Running <TaskInstance: ETL_task.transform_data 2024-07-23T12:27:18.895823+00:00 [running]> on host 9f7825e189e0
+[2024-07-23 12:29:25,012] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=trihx2003@gmail.com
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=ETL_task
+AIRFLOW_CTX_TASK_ID=transform_data
+AIRFLOW_CTX_EXECUTION_DATE=2024-07-23T12:27:18.895823+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-07-23T12:27:18.895823+00:00
+[2024-07-23 12:29:25,097] {logging_mixin.py:104} INFO - Bảng xếp hạng đã được lưu vào file 'premier_league_ranking.csv'.
+[2024-07-23 12:29:25,097] {python.py:151} INFO - Done. Returned value was: True
+[2024-07-23 12:29:25,117] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=ETL_task, task_id=transform_data, execution_date=20240723T122718, start_date=20240723T122924, end_date=20240723T122925
+[2024-07-23 12:29:25,139] {taskinstance.py:1265} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-07-23 12:29:25,155] {local_task_job.py:149} INFO - Task exited with return code 0

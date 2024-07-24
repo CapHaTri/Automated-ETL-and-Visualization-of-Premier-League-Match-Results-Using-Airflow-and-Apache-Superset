@@ -1,0 +1,18 @@
+[2024-07-21 03:41:05,460] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: ETL_task.load_from_mysql 2021-07-24T00:00:00+00:00 [queued]>
+[2024-07-21 03:41:05,579] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: ETL_task.load_from_mysql 2021-07-24T00:00:00+00:00 [queued]>
+[2024-07-21 03:41:05,579] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-21 03:41:05,580] {taskinstance.py:1088} INFO - Starting attempt 2 of 2
+[2024-07-21 03:41:05,580] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-21 03:41:05,926] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): load_from_mysql> on 2021-07-24T00:00:00+00:00
+[2024-07-21 03:41:05,956] {standard_task_runner.py:52} INFO - Started process 194 to run task
+[2024-07-21 03:41:06,037] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'ETL_task', 'load_from_mysql', '2021-07-24T00:00:00+00:00', '--job-id', '160', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/ELT.py', '--cfg-path', '/tmp/tmpsfhh1imx', '--error-file', '/tmp/tmpf_h9s010']
+[2024-07-21 03:41:06,095] {standard_task_runner.py:77} INFO - Job 160: Subtask load_from_mysql
+[2024-07-21 03:41:48,574] {cli_action_loggers.py:105} WARNING - Failed to log action with (psycopg2.OperationalError) could not translate host name "postgres" to address: Temporary failure in name resolution
+
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+[2024-07-21 03:41:51,209] {local_task_job.py:194} WARNING - Recorded pid 268 does not match the current pid 194
+[2024-07-21 03:41:51,325] {process_utils.py:100} INFO - Sending Signals.SIGTERM to GPID 194
+[2024-07-21 03:41:51,338] {logging_mixin.py:104} INFO - Running <TaskInstance: ETL_task.load_from_mysql 2021-07-24T00:00:00+00:00 [running]> on host abd747f4a187
+[2024-07-21 03:41:51,408] {process_utils.py:66} INFO - Process psutil.Process(pid=194, status='terminated', exitcode=<Negsignal.SIGTERM: -15>, started='03:41:05') (194) terminated with exit code Negsignal.SIGTERM
