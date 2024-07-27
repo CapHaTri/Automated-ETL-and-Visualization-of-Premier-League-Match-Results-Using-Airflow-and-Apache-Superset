@@ -42,23 +42,21 @@ This project aims to automate the process of extracting, transforming, and loadi
 
 - **Airflow Configuration**
 
-  - Edit the file `airflow/dags/premier_league_etl.py` to configure your ETL tasks.
-  - Update API endpoint and credentials in `airflow/config.py`.
+  - Edit the file `airflow/dags/ETL.py` to configure your ETL tasks.
 
 - **Superset Configuration**
 
   - Configure the connection to your PostgreSQL database in the Superset web interface after deployment.
-  - Optionally, adjust `superset/superset_config.py` for additional configurations.
 
 - **Docker Compose Configuration**
 
   - Modify `docker-compose.yml` if necessary to suit your environment.
-  - Ensure that environment variables are set correctly in the `.env` file.
 
 3.  **Start the Environment**
 
 ```bash
 docker-compose up -d
+cd Apache_Superset/
 ```
 ## Data Pipeline
 
