@@ -9,10 +9,10 @@
 - [Technologies Used](#technologies-used)
 - [Setup Instructions](#setup-instructions)
 - [Data Pipeline](#data-pipeline)
-- [Visualizations](#visualizations)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [Visualizations](#visualizations)
+- [Conclusion](#concly)
+- [Future Direction](#Future_Direction)
 
 ## Introduction
 
@@ -70,36 +70,50 @@ docker compose -f docker-compose-image-tag.yml up #to run Apache Superset
 - **Email**: Sends an email notification upon completion of the ETL process, including updated results.
 - **Analysis**: Analyzes the EPL data up to the current matches, providing detailed information about each team.
 
-## Visualizations
-
-- Updates league standings, match counts, goal distribution, positions for European competitions and relegation.
-- Creates charts analyzing matches, goals, and other relevant metrics.
-
 ## Usage
 
-### Access Airflow
+### Access Airflow and Run ETL task
 
 - Open [http://localhost:8080](http://localhost:8080) in your browser.
 - Default credentials: `admin` / `admin`.
+- Run ETL_Task
+  
+![image](https://github.com/user-attachments/assets/97fd0fa4-e99e-49ac-a6ef-4edfb997226a)
+
+- After ETL_Task is done, receive email about ETL process and EPL information
+  
+  ![image](https://github.com/user-attachments/assets/fbbba438-9eba-423c-aa25-2d818a61db1a)
 
 ### Access Superset
 
 - Open [http://localhost:8088](http://localhost:8088) in your browser.
 - Default credentials: `admin` / `admin`.
 
-### Trigger ETL Workflow
-
-- In Airflow, manually trigger the ETL DAG or wait for the scheduled run.
-
 ### Explore Data
 
 - In Superset, connect to the PostgreSQL database and use the available datasets to create charts and dashboards.
+  
+![image](https://github.com/user-attachments/assets/1478b49a-d2ec-4445-a496-ef5892d802f0)
 
-## Contributing
+## Visualizations
 
-Contributions are welcome! Please fork the repository, make your changes, and submit a pull request. For bug reports or feature requests, open an issue in the GitHub repository.
+- Updates league standings, match counts, goal distribution, positions for European competitions and relegation.
+  
+  ![image](https://github.com/user-attachments/assets/0f449b1b-fa24-481b-94d2-fd3d143ac8db)
 
+- Creates charts analyzing matches, goals, and other relevant metrics.
+  
+**Team: Manchester City**
+![image](https://github.com/user-attachments/assets/4b6d9385-98b7-40b1-b0ce-6f6ae53a83b5)
+**Team: Manchester United**
+![image](https://github.com/user-attachments/assets/6f896586-2d09-4c41-87ea-b5c255d8a0bf)
+**Team: Arsenal**
+![image](https://github.com/user-attachments/assets/7c8829a3-2b2d-4a92-9327-605914219cdc)
 
+## Conclusion
+- The purpose of this project is to utilize ETL processes to continuously collect and update match results. This enables comprehensive analysis of the league and individual team performances, providing an up-to-date overview of the EPL as of the current matches.
+## Future Direction
+- We aim to gather additional data encompassing more detailed information. This will allow us to create more in-depth analytical charts and insights.
 ## Contact
 
 For any questions or feedback, please reach out to [trihx2003@gmail.com](mailto:trihx2003@gmail.com).
