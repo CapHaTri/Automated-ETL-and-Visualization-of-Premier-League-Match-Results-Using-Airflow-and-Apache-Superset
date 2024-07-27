@@ -62,15 +62,18 @@ docker compose -f docker-compose-image-tag.yml up #to run Apache Superset
 ## Data Pipeline
 ![image](https://github.com/user-attachments/assets/e8c3f81f-42ad-4fdd-a741-f2faedec1217)
 
-- **Scrapy**: Collects data from the English Premier League (EPL) on fbref.com using BeautifulSoup and stores it in a MySQL database.
+- **Scrapy**: Collects data from the English Premier League (EPL) on fbref.com using BeautifulSoup and stores it in a MySQL database as Data lake.
 - **Extraction**: Airflow DAG fetches match results data from MySQL Database.
 - **Transformation**: Data is cleaned and transformed into a format suitable for analysis.
-- **Loading**: Transformed data is loaded into a PostgreSQL database for further analysis.
+- **Loading**: Transformed data is loaded into a PostgreSQL database as Data WareHouse for further analysis.
 - **Scheduling**: Airflow schedules regular updates of the data pipeline.
 - **Email**: Sends an email notification upon completion of the ETL process, including updated results.
 - **Analysis**: Analyzes the EPL data up to the current matches, providing detailed information about each team.
 
 ## Usage
+## Raw Data
+
+![image](https://github.com/user-attachments/assets/5928ce37-9df5-4b59-8356-7c67e15566ff)
 
 ### Access Airflow and Run ETL task
 
