@@ -55,20 +55,25 @@ This project aims to automate the process of extracting, transforming, and loadi
 3.  **Start the Environment**
 
 ```bash
-docker-compose up -d
-cd Apache_Superset/
+docker compose up -d
+cd superset
+docker compose -f docker-compose-image-tag.yml up #to run Apache Superset
 ```
 ## Data Pipeline
+![image](https://github.com/user-attachments/assets/e8c3f81f-42ad-4fdd-a741-f2faedec1217)
 
-- **Extraction**: Airflow DAG fetches match results data from an external API.
+- **Scrapy**: Collects data from the English Premier League (EPL) on fbref.com using BeautifulSoup and stores it in a MySQL database.
+- **Extraction**: Airflow DAG fetches match results data from MySQL Database.
 - **Transformation**: Data is cleaned and transformed into a format suitable for analysis.
 - **Loading**: Transformed data is loaded into a PostgreSQL database for further analysis.
 - **Scheduling**: Airflow schedules regular updates of the data pipeline.
+- **Email**: Sends an email notification upon completion of the ETL process, including updated results.
+- **Analysis**: Analyzes the EPL data up to the current matches, providing detailed information about each team.
 
 ## Visualizations
 
-- **Dashboards**: Create interactive dashboards in Apache Superset to visualize match results, player statistics, and team performance.
-- **Charts**: Use Superset's charting capabilities to generate graphs and tables that reflect the latest data.
+- Updates league standings, match counts, goal distribution, positions for European competitions and relegation.
+- Creates charts analyzing matches, goals, and other relevant metrics.
 
 ## Usage
 
@@ -94,9 +99,6 @@ cd Apache_Superset/
 
 Contributions are welcome! Please fork the repository, make your changes, and submit a pull request. For bug reports or feature requests, open an issue in the GitHub repository.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
