@@ -23,6 +23,8 @@ x-airflow-common:
       condition: service_healthy
     postgres:
       condition: service_healthy
+  networks:
+    - my-network
 
 services:
   postgres:
@@ -41,6 +43,8 @@ services:
       interval: 5s
       retries: 5
     restart: always
+    networks:
+      - my-network
 
   redis:
     image: redis:latest
@@ -52,6 +56,8 @@ services:
       timeout: 30s
       retries: 50
     restart: always
+    networks:
+      - my-network
 
   airflow-webserver:
     <<: *airflow-common
@@ -64,6 +70,8 @@ services:
       timeout: 10s
       retries: 5
     restart: always
+    networks:
+      - my-network
 
   airflow-scheduler:
     <<: *airflow-common
@@ -74,6 +82,8 @@ services:
       timeout: 10s
       retries: 5
     restart: always
+    networks:
+      - my-network
 
   airflow-worker:
     <<: *airflow-common
@@ -86,6 +96,8 @@ services:
       timeout: 10s
       retries: 5
     restart: always
+    networks:
+      - my-network
 
   airflow-init:
     <<: *airflow-common
@@ -96,6 +108,8 @@ services:
       _AIRFLOW_WWW_USER_CREATE: 'true'
       _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
       _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
+    networks:
+      - my-network
 
   flower:
     <<: *airflow-common
@@ -108,6 +122,8 @@ services:
       timeout: 10s
       retries: 5
     restart: always
+    networks:
+      - my-network
 
   mysql-db:
     image: mysql:latest
@@ -123,6 +139,8 @@ services:
       interval: 10s
       retries: 5
     restart: always
+    networks:
+      - my-network
 
   postgresql-db:
     image: postgres:latest
@@ -139,10 +157,15 @@ services:
       interval: 10s
       retries: 5
     restart: always
-
+    networks:
+      - my-network
 
 volumes:
   postgres-db-volume:
   mysql-data:
   postgresql-data:
   superset-data:
+
+networks:
+  my-network:
+    external: true
