@@ -71,7 +71,7 @@ docker compose -f docker-compose-image-tag.yml up #to run Apache Superset
 - **Analysis**: Analyzes the EPL data up to the current matches, providing detailed information about each team.
 
 ## Usage
-## Raw Data
+### Raw Data
 
 ![image](https://github.com/user-attachments/assets/5928ce37-9df5-4b59-8356-7c67e15566ff)
 
