@@ -18,12 +18,12 @@
 
 This project aims to automate the process of extracting, transforming, and loading (ETL) Premier League match results, storing them in a PostgreSQL database, and visualizing the data using Apache Superset. The entire ETL workflow is managed by Apache Airflow, ensuring a scalable and reliable data pipeline.
 ## Features
-
-- **Automated ETL Pipeline**: Using Apache Airflow to automate the process of extracting match data from an external API, transforming it into a usable format, and loading it into a PostgreSQL database.
+- **Web Srapy:** Using BeautifulSoup to get data from EPL source, store in MySQL as datalake
+- **Automated ETL Pipeline**: Using Apache Airflow to automate the process of collecting data into MySQL, extracting it from MySQL, transforming into a usable format, and loading into a PostgreSQL database. After that, using Smtplib to email about results
 - **Data Visualization**: Leveraging Apache Superset to create interactive dashboards and visualizations for analyzing Premier League match results.
 - **Docker Compose Setup**: The project uses Docker Compose to streamline the deployment and management of the required services, including Apache Airflow, PostgreSQL, Redis, MySQL, and Apache Superset.
 ## Technologies Used
-
+- **BeautifulSoup** : For web scrapy
 - **Apache Airflow**: For managing and scheduling ETL workflows.
 - **PostgreSQL**: To store transformed match results data.
 - **Redis**: Provides caching to enhance performance.
